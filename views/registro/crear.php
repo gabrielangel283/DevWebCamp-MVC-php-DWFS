@@ -1,3 +1,7 @@
+<?php
+$paypalClientId = $_ENV['PAYPAL_CLIENT_ID'];
+?>
+
 <main class="registro">
     <h2 class="registro__heading"><?php echo $titulo; ?></h2>
 
@@ -57,7 +61,7 @@
 
 
 <!-- Reemplazar CLIENT_ID por tu client id proporcionado al crear la app desde el developer dashboard) -->
-<script src="https://www.paypal.com/sdk/js?client-id=AapWWDE-5e-RMQIRFsCswtLQUHsPCYZoO3xfvvAfQ3R36XWHrsO57Tt9E3nher29LyNlUGHCAFehbo3M&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=<?php echo htmlspecialchars($paypalClientId, ENT_QUOTES, 'UTF-8'); ?>&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
 
 <script>
     function initPayPalButton() {
